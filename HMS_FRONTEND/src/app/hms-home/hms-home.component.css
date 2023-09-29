@@ -1,0 +1,106 @@
+
+
+body{
+background-image: url('src\assets\banner5.JPG');
+background-size:cover;
+background-repeat: no-repeat;
+position:relative;
+top: 0;
+left: 0;
+max-height: 100%;
+max-width: 100%;
+font-family: sans-serif;
+background-color: #636262;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.bg2{
+
+max-height: 50px;
+margin-left: 620px;
+margin-top: 0px;
+margin-bottom: 0px;
+position:absolute;
+}
+
+.card{
+height: 370px;
+margin-top: 235px;
+margin-right: 55px;
+margin-bottom: 100px;
+border-radius: 5%;
+border-color: rgb(90, 89, 88);
+width: 400px;
+background-color: rgba(136, 136, 127, 0.5) !important;
+}
+
+h1{
+  color: rgb(248, 248, 8);
+  text-shadow: black 1px.3px.4px;
+}
+
+
+.card-header h3{
+color: rgb(199, 190, 137);
+}
+
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #636262;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 2 0  !important;
+box-shadow: 0 1 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #f0e007;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: rgb(230, 182, 94);
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.title{
+  position:absolute;
+  font-size: 40px;
+  margin-top: 20px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+margin-left: 255px;
+margin-bottom: 0px;
+color: rgb(105, 93, 75);
+text-shadow: black 1px.2px.0px;
+}
