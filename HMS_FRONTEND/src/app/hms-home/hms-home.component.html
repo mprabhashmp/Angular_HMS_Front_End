@@ -1,8 +1,8 @@
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!DOCTYPE html>
 <html>
 <head>
 	<title>R.HMS</title>
@@ -35,19 +35,19 @@
 
 			</div>
 			<div class="card-body">
-				<form>
+				<form (ngSubmit)="onSubmit()">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user custom-icon"></i></span>
 						</div>
-						<input type="text" name="username" class="form-control" placeholder="username">
+						<input type="text" name="index" [(ngModel)]="index" class="form-control" placeholder="Index No." required>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key custom-icon"></i></span>
 						</div>
-						<input type="password" name="password" class="form-control" placeholder="password">
+						<input type="password" name="password" [(ngModel)]="password" class="form-control" placeholder="password" required>
 					</div>
 					<div class="row align-items-center remember" style="color: black;">
 						<input type="checkbox">Remember Me
@@ -55,6 +55,7 @@
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
+					<div *ngIf="error" class="error-message">{{ error }}</div>
 				</form>
 			</div>
 			<div class="card-footer">
