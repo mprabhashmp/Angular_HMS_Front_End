@@ -26,9 +26,10 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "src/styles.css",
+              "../../assets/vendor/animate/animate.css"
             ],
-            "scripts": []
+            "scripts": ["../../assets/vendor/tilt/tilt.jquery.min.js"]
           },
           "configurations": {
             "production": {
