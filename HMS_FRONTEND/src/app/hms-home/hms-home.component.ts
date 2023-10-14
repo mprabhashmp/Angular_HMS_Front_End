@@ -8,14 +8,14 @@ import { HmsHomeService } from './hms-home.service';
   styleUrls: ['./hms-home.component.css']
 })
 export class HmsHomeComponent {
-  index = '';
+  user_index = '';
   password='';
   error='';
 
   constructor(private HomeService:HmsHomeService, private router:Router) { }
 
   onSubmit() {
-    this.HomeService.login(this.index, this.password)
+    this.HomeService.login(this.user_index, this.password)
       .subscribe(
         (response: { token: any; }) => {
           const token = response.token;
@@ -37,17 +37,17 @@ export class HmsHomeComponent {
                 //   this.router.navigate(['/']);
                 //   break;
                 default:
-                  this.router.navigate(['/hms-home']);
+                  this.router.navigate(['/']);
                   break;
               }
             }
           );
         },
-        (error: { status: number; }) => {
+        (error) => {
           if (error.status === 401) {
             this.error = 'Please enter valid credentials.';
           } else {
-            this.error = 'Invalid email or password.';
+            this.error = 'Invalid Index or password.';
           }
         }
       );

@@ -22,9 +22,9 @@ export class HmsHomeService {
     return headers;
   }
 
-  login(index: string, password: string): Observable<{ token: string }> {
+  login(user_index: string, password: string): Observable<{ token: string }> {
     const body = {
-      index: index,
+      user_index: user_index,
       password: password
     };
     return this.http.post<{ token: string }>(`${this.apiUrl1}`, body);
