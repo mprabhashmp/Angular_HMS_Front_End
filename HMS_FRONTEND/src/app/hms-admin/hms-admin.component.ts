@@ -9,15 +9,17 @@ import { AdminServiceService } from './admin-service.service';
 })
 export class HmsAdminComponent implements OnInit {
  
-  users: any[] = [];
+ users: any[] = [];
  searchValue: string = '';
  filteredUsers: any[] = [];
+ userCount:any;
 
  constructor(private AdminService: AdminServiceService) { }
 
   ngOnInit() {
 
     this.getUsers();
+    this.getUserCount();
   }
 
   userUpdate: any = {
@@ -25,11 +27,20 @@ export class HmsAdminComponent implements OnInit {
     fname: '',
     lname: '',
     user_index: '',
+    hostaltype:'',
+    room:'',
     role: ''
   };
 
-  getUserCount(){
-    this.AdminService.getUserCount().subscribe(count => this.users = count);
+  getUserCount() {
+    this.AdminService.getUserCount().subscribe(
+      (count: any) => {
+        this.userCount = count;
+      },
+      (error) => {
+        console.log('Error retrieving user count:', error);
+      }
+    );
   }
  
 
@@ -48,6 +59,8 @@ export class HmsAdminComponent implements OnInit {
         user.fname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
         user.lname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
         user.user_index.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.room.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        user.hostaltype.toLowerCase().includes(this.searchValue.toLowerCase()) ||
         user.role.toLowerCase().includes(this.searchValue.toLowerCase())
       );
     }

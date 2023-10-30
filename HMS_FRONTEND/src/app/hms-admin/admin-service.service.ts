@@ -9,7 +9,8 @@ export class AdminServiceService {
 
   private apiUrl = 'http://localhost:8080/api/admin/all';
   private adminUrl = 'http://localhost:8080/api/admin';
-  private getusercount= "http://localhost:8080/api/admin/userCount";
+  private countUser = 'http://localhost:8080/api/admin';
+  users:any;
 
   constructor(private http: HttpClient) { }
 
@@ -26,12 +27,14 @@ export class AdminServiceService {
     const url = `${this.adminUrl}/${id}`;
     return this.http.get<any>(url);
   }
+
   getUserById(id: number): Observable<any> {
     return this.http.get<any>(`${this.adminUrl}/${id}`);
   }
 
-  getUserCount():Observable<any>{
-    return this.http.get<any>(`${this.getusercount}`);
+
+  getUserCount(): Observable<number> {
+    return this.http.get<number>(`${this.countUser}/userCount`);
   }
   // updateUser(id: number, updatedUser: any): Observable<any> {
   //   return this.http.put<any>(`${this.adminUrl}/update/${id}`, updatedUser);
