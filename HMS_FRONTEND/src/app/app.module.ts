@@ -12,6 +12,10 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { StaffRegisterationComponent } from './staff-registeration/staff-registeration.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
     UnauthorizedComponent,
     NavbarComponent,
     AdminSidebarComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    RegistrationComponent,
+    StaffRegisterationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
