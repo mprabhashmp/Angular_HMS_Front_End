@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+</head>
+<body>
+
+  <app-admin-navbar></app-admin-navbar> 
+
+<div class="testbox">
+    <form (submit)="register()">
+      <div class="banner">
+        <h3>Student Registration Form</h3>
+      </div>
+  
+        <div class="item">
+          <label for="user_index">Index_No<span>*</span></label>
+          <input id="user_index" type="text" name="user_index"  [(ngModel)]="regData.user_index" required/>
+        </div>
+        <div class="item">
+          <label for="firstName">First Name<span>*</span></label>
+          <input id="firstName" type="text" name="firstName" pattern="[A-Za-z ]+" [(ngModel)]="regData.fname" title="Only English letters are allowed"required />
+        </div>
+        <div class="item">
+          <label for="lastName">Last Name<span>*</span></label>
+          <input id="lastName" type="text" name="lastName"  pattern="[A-Za-z ]+" [(ngModel)]="regData.lname"  title="Only English letters are allowed"required/>
+        </div>
+        <div class="item">
+          <label for="password">Password<span>*</span></label>
+          <input id="password" type="text" name="password"[(ngModel)]="regData.password" required/>
+        </div>
+        <div class="item">
+          <label for="room">Room No<span>*</span></label>
+          <input id="room" type="text" name="room"  pattern="[0-9]+" [(ngModel)]="regData.room" title="Only numbers are allowed"required/>
+        </div>
+      
+        <div class="item">
+          <p>Hostal Type<span>*</span></p>
+          <select name="hostaltype" id="hostaltype" [(ngModel)]="regData.hostaltype" required>
+            <option value="g">Girl's Hostal</option>
+            <option value="b">Boy's Hostal</option>
+          </select>
+        </div>
+      
+        <div class="item">
+          <p>Role<span>*</span></p>
+          <select name="role" id="role" [(ngModel)]="regData.role"  required>
+            <option value="STUDENT" selected>student</option>
+            <option value="WARDEN">Warden</option>
+            <option value="SUB_WARDEN">Sub Warden</option>
+            <option value="DEAN">Dean</option>
+          </select>
+        </div>
+     
+      <div class="btn-block">
+       <button type="submit" >SUBMIT</button>
+      </div>
+      <button type="button" class="btn btn-custom" onclick="clear()">Clear</button>
+    </form>
+  </div>
+  </body>
+  </html>
