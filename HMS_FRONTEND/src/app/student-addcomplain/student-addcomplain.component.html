@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+</head>
+<body>
+
+  <app-student-navbar></app-student-navbar> 
+
+<div class="testbox">
+    <form (submit)="submit()">
+      <div class="banner">
+        <h3>Create Complain</h3>
+      </div>
+
+      <div class="item">
+        <label for="c_itemcode">Complain Item Code<span>*</span></label>
+        <input id="c_itemcode" type="text" name="c_itemcode"  pattern="[0-9]+" [(ngModel)]="comp.c_itemcode" title="Only numbers are allowed"required/>
+      </div>
+
+        <div class="item">
+          <label for="user_index">Index_No<span>*</span></label>
+          <input id="user_index" type="text" name="user_index"  [(ngModel)]="comp.user_index" required/>
+        </div>
+
+        <div class="item">
+            <label for="fname">First Name<span>*</span></label>
+            <input id="fname" type="text" name="fname" pattern="[A-Za-z ]+" [(ngModel)]="comp.fname" title="Only English letters are allowed"required />
+          </div>
+          <div class="item">
+            <label for="lname">Last Name<span>*</span></label>
+            <input id="lname" type="text" name="lname"  pattern="[A-Za-z ]+" [(ngModel)]="comp.lname"  title="Only English letters are allowed"required/>
+          </div>
+
+        <div class="item">
+            <label for="c_description">Complain Description<span>*</span></label>
+            <input id="c_description" type="text" name="c_description"  [(ngModel)]="comp.c_description" required/>
+          </div>
+
+          <div class="item">
+            <label for="c_image">Complain Image<span>*</span></label>
+            <input id="c_image" type="text" name="c_image"  [(ngModel)]="comp.c_image" required/>
+          </div>
+
+        <div class="item">
+          <label for="room">Room No<span>*</span></label>
+          <input id="room" type="text" name="room"  pattern="[0-9]+" [(ngModel)]="comp.room" title="Only numbers are allowed"required/>
+        </div>
+
+        <div class="item">
+            <label for="hostaltype">Hostel Type<span>*</span></label>
+            <input id="hostaltype" type="text" name="hostaltype"  pattern="[0-9]+" [(ngModel)]="comp.hostaltype" title="Only numbers are allowed"required/>
+          </div>
+
+     
+      <div class="btn-block">
+       <button type="submit" >SUBMIT</button>
+      </div>
+    </form>
+  </div>
+  </body>
+  </html>
