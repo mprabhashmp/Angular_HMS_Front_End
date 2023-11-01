@@ -7,13 +7,21 @@ import { HmsAdminComponent } from './hms-admin/hms-admin.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StaffRegisterationComponent } from './staff-registeration/staff-registeration.component';
+import { HmsStudentsComponent } from './hms-students/hms-students.component';
+import { HmsWardenComponent } from './hms-warden/hms-warden.component';
+import { HmsSubwardenComponent } from './hms-subwarden/hms-subwarden.component';
+import { HmsDeanComponent } from './hms-dean/hms-dean.component';
 
 const routes: Routes = [
   {path:"",component:HmsHomeComponent},
   {path:"hms-admin",component:HmsAdminComponent, canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }},
-  {path:"unauthorized",component:UnauthorizedComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }},
+  {path:"unauthorized",component:UnauthorizedComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT','WARDEN','SUBWARDEN','DEAN'] },resolve: { userRole: RouterresolverService }},
   {path:"registration",component:RegistrationComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }},
-  {path:"staff-registeration",component:StaffRegisterationComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }}
+  {path:"staff-registeration",component:StaffRegisterationComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }},
+  {path:"hms-students",component:HmsStudentsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
+  {path:"hms-warden",component:HmsWardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN',] },resolve: { userRole: RouterresolverService }},
+  {path:"hms-subwarden",component:HmsSubwardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN',] },resolve: { userRole: RouterresolverService }},
+  {path:"hms-dean",component:HmsDeanComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN',] },resolve: { userRole: RouterresolverService }}
 ];
 
 @NgModule({

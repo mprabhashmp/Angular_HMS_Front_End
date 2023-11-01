@@ -30,12 +30,18 @@ export class HmsHomeComponent {
                 case 'ADMIN':
                   this.router.navigate(['/hms-admin']);
                   break;
-                // case 'Student':
-                //   this.router.navigate(['/']);
-                //   break;
-                // case 'Warden':
-                //   this.router.navigate(['/']);
-                //   break;
+                case 'STUDENT':
+                  this.router.navigate(['/hms-students']);
+                  break;
+                case 'WARDEN':
+                  this.router.navigate(['/hms-warden']);
+                  break;
+                  case 'SUBWARDEN':
+                  this.router.navigate(['/hms-subwarden']);
+                  break;
+                  case 'DEAN':
+                  this.router.navigate(['/hms-dean']);
+                  break;
                 default:
                   this.router.navigate(['/']);
                   break;

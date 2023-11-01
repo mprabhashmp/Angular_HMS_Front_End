@@ -49,6 +49,7 @@ export class StaffRegisterationComponent {
         user_index:''
       };
     }
+    
     validateForm(): boolean {
       // Perform front-end validation
       if (

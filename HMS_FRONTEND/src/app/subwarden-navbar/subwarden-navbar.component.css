@@ -2,14 +2,15 @@
     color: aliceblue;
     text-decoration: none;
     user-select: none;
+   
 }
 
 .navbar-nav li a{
     font-weight: bolder;
-    color: #595454;
+    color: #484545;
     text-decoration: none;
     outline: none;
-  
+
 }
 
 .navbar-nav li a::after{
@@ -23,7 +24,8 @@
   .logout-button {
 
     text-align: center;
-    padding: 2px;
+
+    padding: 6px;
     border-radius: 8px;
     background-color: rgb(247, 88, 88);
     color: rgb(0, 0, 0);
@@ -31,7 +33,8 @@
     border: none;
     cursor: pointer;
   }
-  
   .navbar{
     box-shadow: 0px 2px 4px ;
 }
+
+
