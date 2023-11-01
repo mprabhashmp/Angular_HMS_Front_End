@@ -20,6 +20,10 @@ import { HmsStudentsComponent } from './hms-students/hms-students.component';
 import { StudentNavbarComponent } from './student-navbar/student-navbar.component';
 import { HmsWardenComponent } from './hms-warden/hms-warden.component';
 import { WardenNavbarComponent } from './warden-navbar/warden-navbar.component';
+import { HmsSubwardenComponent } from './hms-subwarden/hms-subwarden.component';
+import { SubwardenNavbarComponent } from './subwarden-navbar/subwarden-navbar.component';
+import { HmsDeanComponent } from './hms-dean/hms-dean.component';
+import { DeanNavbarComponent } from './dean-navbar/dean-navbar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { WardenNavbarComponent } from './warden-navbar/warden-navbar.component';
     HmsStudentsComponent,
     StudentNavbarComponent,
     HmsWardenComponent,
-    WardenNavbarComponent
+    WardenNavbarComponent,
+    HmsSubwardenComponent,
+    SubwardenNavbarComponent,
+    HmsDeanComponent,
+    DeanNavbarComponent
   ],
   imports: [
     BrowserModule,
