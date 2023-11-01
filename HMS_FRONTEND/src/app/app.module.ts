@@ -16,6 +16,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { StaffRegisterationComponent } from './staff-registeration/staff-registeration.component';
+import { HmsStudentsComponent } from './hms-students/hms-students.component';
+import { StudentNavbarComponent } from './student-navbar/student-navbar.component';
+import { HmsWardenComponent } from './hms-warden/hms-warden.component';
+import { WardenNavbarComponent } from './warden-navbar/warden-navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { StaffRegisterationComponent } from './staff-registeration/staff-registe
     AdminSidebarComponent,
     AdminNavbarComponent,
     RegistrationComponent,
-    StaffRegisterationComponent
+    StaffRegisterationComponent,
+    HmsStudentsComponent,
+    StudentNavbarComponent,
+    HmsWardenComponent,
+    WardenNavbarComponent
   ],
   imports: [
     BrowserModule,
