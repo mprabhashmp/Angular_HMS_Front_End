@@ -36,6 +36,12 @@ export class HmsHomeComponent {
                 case 'WARDEN':
                   this.router.navigate(['/hms-warden']);
                   break;
+                  case 'SUBWARDEN':
+                  this.router.navigate(['/hms-subwarden']);
+                  break;
+                  case 'DEAN':
+                  this.router.navigate(['/hms-dean']);
+                  break;
                 default:
                   this.router.navigate(['/']);
                   break;
