@@ -12,6 +12,12 @@
 
   <app-warden-navbar></app-warden-navbar> 
   
+  
+  <div *ngIf="currentUser">
+    <h2>Current User Details</h2>
+    <p>First Name: {{ currentUser.fname }}</p>
+    <p>Last Name: {{ currentUser.lname }}</p>
+  </div>
                
 </body>
 </html>
