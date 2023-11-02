@@ -8,40 +8,37 @@ import { AddcomplainServiceService } from './addcomplain.service.service';
 })
 export class StudentAddcomplainComponent {
 
+  complain: any = {};
+  selectedFile!: File | null;
 
-  comp = {
-    c_id:'',
-    fname: '',
-    lname: '',
-    room:'',
-    user_index:'',
-    hostaltype:'',
-    c_description: '',
-    c_image : '',
-    c_itemcode:''
-    };
-  
-    constructor(private addcomplainservice: AddcomplainServiceService) { }
-  
-    submit(): void {
+  constructor(private complainService: AddcomplainServiceService) {}
 
-        // Call the registration service to register the user
-        this.addcomplainservice.registerUser(this.comp)
-          .subscribe(response => {
-            // Handle the response from the server
-            console.log(response);
-            alert('Successfully Created!!');
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
 
-          },
-          error => {
-            // Handle the error response from the server
-            console.log(error);
-            alert('Complain error!');
-            
-          }
-  
-          );
-      }
+  submitForm() {
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('c_itemcode', this.selectedFile);
+      formData.append('user_index', this.complain.user_index);
+      formData.append('c_description', this.complain.c_description);
+      formData.append('fname', this.complain.fname);
+      formData.append('lname', this.complain.lname);
+      formData.append('room', this.complain.room);
+      formData.append('c_image',this.complain.c_image)
+      formData.append('hostaltype', this.complain.hostaltype);
 
-
+      this.complainService.createComplain(formData).subscribe(
+        (response) => {
+          console.log('Complain submitted:', response);
+          // Handle the response from the server
+        },
+        (error) => {
+          console.error('Error submitting complain:', error);
+          // Handle errors
+        }
+      );
     }
+  }
+}

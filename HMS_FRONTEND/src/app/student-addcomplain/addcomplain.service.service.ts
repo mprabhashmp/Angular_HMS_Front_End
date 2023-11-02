@@ -1,18 +1,18 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddcomplainServiceService {
 
-  constructor(private http: HttpClient) { }
 
-  private apiUrl = 'http://localhost:8080/api/user/complain/create';
+  private apiUrl = 'http://localhost:8080/api/user/complain'; // Replace with your Spring Boot API URL
 
-  registerUser(regData : any){
-    // Send the registration request to the server
-    const url = `${this.apiUrl}`
-    return this.http.post(url , regData);
+  constructor(private http: HttpClient) {}
+
+  createComplain(complainData: FormData) {
+    return this.http.post(this.apiUrl + '/create', complainData);
   }
 }
