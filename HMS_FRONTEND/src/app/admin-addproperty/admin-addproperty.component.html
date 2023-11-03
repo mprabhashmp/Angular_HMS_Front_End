@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+</head>
+<body>
+
+<div class="testbox">
+    <form (submit)="submitForm()">
+      <div class="banner">
+        <h3>Add New Item</h3>
+      </div>
+
+        <div class="item">
+          <label for="c_item_code">Item Code<span></span></label>
+          <input id="c_item_code" type="text" name="c_item_code" [(ngModel)]="property.c_item_code" >
+        </div>
+
+        <div class="item">
+            <label for="name">Item Name<span></span></label>
+            <input id="name" type="text" name="name" [(ngModel)]="property.name" >
+        </div>
+
+        <div class="item">
+            <label for="status">Status<span></span></label>
+            <input id="status" type="text" name="status" [(ngModel)]="property.status">
+        </div>
+
+      <div class="btn-block">
+       <button type="submit" >ADD ITEM</button>
+      </div>
+    </form>
+  </div>
+  </body>
+  </html>
