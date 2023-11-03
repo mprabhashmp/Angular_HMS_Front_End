@@ -159,3 +159,7 @@ body, div, form, input, select, textarea, label {
         padding: 5px 3px; /* Adjust the padding to change the button size */
         font-size: 16px; /* Adjust the font size to change the button text size */
       }
+
+      span{
+        color: red;
+      }
