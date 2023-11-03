@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class AddcomplainServiceService {
 
-
   private apiUrl = 'http://localhost:8080/api/user/complain'; // Replace with your Spring Boot API URL
 
   constructor(private http: HttpClient) {}
