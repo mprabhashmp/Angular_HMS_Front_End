@@ -29,6 +29,8 @@ import { StudentAddcomplainComponent } from './student-addcomplain/student-addco
 import { StudentViewcomplainComponent } from './student-viewcomplain/student-viewcomplain.component';
 
 import { AdminPropertyComponent } from './admin-property/admin-property.component';
+import { AdminUsersStudentComponent } from './admin-users-student/admin-users-student.component';
+import { AdminUsersStaffComponent } from './admin-users-staff/admin-users-staff.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { AdminPropertyComponent } from './admin-property/admin-property.componen
     StudentViewcomplainComponent,
 
     AdminPropertyComponent,
+      AdminUsersStudentComponent,
+      AdminUsersStaffComponent,
 
   ],
   imports: [

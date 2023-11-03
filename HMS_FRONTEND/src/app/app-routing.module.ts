@@ -16,6 +16,8 @@ import { StudentAddcomplainComponent } from './student-addcomplain/student-addco
 import { StudentViewcomplainComponent } from './student-viewcomplain/student-viewcomplain.component';
 
 import { AdminPropertyComponent } from './admin-property/admin-property.component';
+import { AdminUsersStudentComponent } from './admin-users-student/admin-users-student.component';
+import { AdminUsersStaffComponent } from './admin-users-staff/admin-users-staff.component';
 
 
 
@@ -38,6 +40,9 @@ const routes: Routes = [
 
   {path:"admin-property",component:AdminPropertyComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
 
+  {path:"admin-users-students",component:AdminUsersStudentComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
+
+  {path:"admin-users-staff",component:AdminUsersStaffComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
 
 ];
 
