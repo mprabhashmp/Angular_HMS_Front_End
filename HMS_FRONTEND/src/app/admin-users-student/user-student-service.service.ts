@@ -5,16 +5,27 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminServiceService {
+export class UserStudentServiceService {
 
 
+  private apiUrl = 'http://localhost:8080/api/admin/allstudent';
+  private adminUrl = 'http://localhost:8080/api/admin';
   private countUser = 'http://localhost:8080/api/admin';
   users:any;
 
   constructor(private http: HttpClient) { }
 
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    const url = `${this.adminUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
+
   getUserCount(): Observable<number> {
     return this.http.get<number>(`${this.countUser}/userCount`);
   }
-
 }
