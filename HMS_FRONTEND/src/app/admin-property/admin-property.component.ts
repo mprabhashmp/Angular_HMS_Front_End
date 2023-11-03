@@ -13,6 +13,7 @@ export class AdminPropertyComponent implements OnInit {
   searchValue: string = '';
   filterdProperties: any[] = [];
   propertyCount:any;
+  p: number = 1;
 
   constructor(private PropertyService: PropertyServiceService) { }
 
@@ -40,6 +41,29 @@ export class AdminPropertyComponent implements OnInit {
   }
 
   getProperties() {
-  
+    this.PropertyService.getProperties().subscribe(properties => {
+      this.properties = properties;
+      this.filterdProperties = properties;
+    });
   }
+
+  searchProperty(): void {
+    console.log(this.searchValue);
+    if (this.searchValue.trim() === '') {
+      this.filterdProperties = this.properties;
+    } else {
+      this.filterdProperties = this.properties.filter(property =>
+        property.proid.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        property.c_item_code.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        property.name.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        property.status.toLowerCase().includes(this.searchValue.toLowerCase())
+      );
+    }
+  }
+
+  clearSearch(): void {
+    this.searchValue = '';
+    this.filterdProperties = this.properties;
+  }
+  
 }
