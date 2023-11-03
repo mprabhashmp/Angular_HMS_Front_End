@@ -12,6 +12,7 @@ import { HmsWardenComponent } from './hms-warden/hms-warden.component';
 import { HmsSubwardenComponent } from './hms-subwarden/hms-subwarden.component';
 import { HmsDeanComponent } from './hms-dean/hms-dean.component';
 import { StudentAddcomplainComponent } from './student-addcomplain/student-addcomplain.component';
+import { StudentViewcomplainComponent } from './student-viewcomplain/student-viewcomplain.component';
 
 const routes: Routes = [
   {path:"",component:HmsHomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"hms-subwarden",component:HmsSubwardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN',] },resolve: { userRole: RouterresolverService }},
   {path:"hms-dean",component:HmsDeanComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN',] },resolve: { userRole: RouterresolverService }},
   {path:"student-addcomplain",component:StudentAddcomplainComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
+  {path:"student-viewcomplain",component:StudentViewcomplainComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
 ];
 
 @NgModule({
