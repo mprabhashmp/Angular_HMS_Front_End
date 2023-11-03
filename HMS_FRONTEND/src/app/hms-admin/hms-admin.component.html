@@ -39,7 +39,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr scope="row" *ngFor="let user of filteredUsers">
+                      <tr scope="row" *ngFor="let user of (filteredUsers | paginate: { itemsPerPage: 10, currentPage: p })">
                       <td>{{ user.id }}</td>
                       <td>{{ user.user_index }}</td>
                       <td>{{ user.fname }}</td>
@@ -50,6 +50,9 @@
                       </tr>
                       </tbody>
                       </table>
+                      <div class="text-center">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                       </div>
                
 </body>
