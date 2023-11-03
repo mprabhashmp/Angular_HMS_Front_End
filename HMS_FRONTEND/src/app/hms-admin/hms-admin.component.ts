@@ -55,13 +55,13 @@ export class HmsAdminComponent implements OnInit {
     if (this.searchValue.trim() === '') {
       this.filteredUsers = this.users;
     } else {
-      this.filteredUsers = this.users.filter(user =>
-        user.fname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        user.lname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        user.user_index.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        user.room.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        user.hostaltype.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        user.role.toLowerCase().includes(this.searchValue.toLowerCase())
+      this.filteredUsers = this.users.filter(users =>
+        users.fname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        users.lname.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        users.user_index.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        users.room.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        users.hostaltype.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        users.role.toLowerCase().includes(this.searchValue.toLowerCase())
       );
     }
   }

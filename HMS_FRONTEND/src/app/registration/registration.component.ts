@@ -42,6 +42,7 @@ export class RegistrationComponent {
           );
       }
     }
+
     clear(): void {
       this.regData = {
         fname: '',
@@ -53,6 +54,7 @@ export class RegistrationComponent {
         user_index:''
       };
     }
+    
     validateForm(): boolean {
       // Perform front-end validation
       if (
@@ -61,7 +63,8 @@ export class RegistrationComponent {
         this.regData.room.trim() === '' ||
         this.regData.password.trim() === '' ||
         this.regData.role.trim() === ''||
-        this.regData.hostaltype.trim() === ''
+        this.regData.hostaltype.trim() === ''||
+        this.regData.user_index.trim() === ''
       ) {
         // Show an error message or perform any other desired actions
         alert('All fields are required');

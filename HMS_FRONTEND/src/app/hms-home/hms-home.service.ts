@@ -11,7 +11,7 @@ export class HmsHomeService {
 
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
-  private apiUrl3 = 'http://localhost:8080/api/auth/UserProfile';
+  private apiUrl3 = 'http://localhost:8080/api/auth/userprofile';
   private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
 
   constructor(private http: HttpClient) { }

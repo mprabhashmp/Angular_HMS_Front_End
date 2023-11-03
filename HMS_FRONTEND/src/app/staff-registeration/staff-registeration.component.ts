@@ -56,7 +56,8 @@ export class StaffRegisterationComponent {
         this.regData.fname.trim() === '' ||
         this.regData.lname.trim() === '' ||
         this.regData.password.trim() === '' ||
-        this.regData.role.trim() === ''
+        this.regData.role.trim() === ''||
+        this.regData.user_index.trim() === ''
       ) {
         // Show an error message or perform any other desired actions
         alert('All fields are required');
