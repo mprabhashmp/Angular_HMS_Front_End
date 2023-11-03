@@ -52,9 +52,9 @@ import { AdminPropertyComponent } from './admin-property/admin-property.componen
     DeanNavbarComponent,
     StudentAddcomplainComponent,
 
-    StudentViewcomplainComponent
+    StudentViewcomplainComponent,
 
-    AdminPropertyComponent
+    AdminPropertyComponent,
 
   ],
   imports: [
