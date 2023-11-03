@@ -25,7 +25,11 @@ import { SubwardenNavbarComponent } from './subwarden-navbar/subwarden-navbar.co
 import { HmsDeanComponent } from './hms-dean/hms-dean.component';
 import { DeanNavbarComponent } from './dean-navbar/dean-navbar.component';
 import { StudentAddcomplainComponent } from './student-addcomplain/student-addcomplain.component';
+
+import { StudentViewcomplainComponent } from './student-viewcomplain/student-viewcomplain.component';
+
 import { AdminPropertyComponent } from './admin-property/admin-property.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { AdminPropertyComponent } from './admin-property/admin-property.componen
     HmsDeanComponent,
     DeanNavbarComponent,
     StudentAddcomplainComponent,
+
+    StudentViewcomplainComponent
+
     AdminPropertyComponent
+
   ],
   imports: [
     BrowserModule,

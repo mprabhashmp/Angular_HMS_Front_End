@@ -26,11 +26,11 @@
 
         <div class="item">
             <label for="fname">First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" pattern="[A-Za-z ]+" [(ngModel)]="complain.fname" title="Only English letters are allowed"required />
+            <input id="fname" type="text" name="fname"  [(ngModel)]="complain.fname"required />
           </div>
           <div class="item">
             <label for="lname">Last Name<span>*</span></label>
-            <input id="lname" type="text" name="lname"  pattern="[A-Za-z ]+" [(ngModel)]="complain.lname"  title="Only English letters are allowed"required/>
+            <input id="lname" type="text" name="lname"   [(ngModel)]="complain.lname" required/>
           </div>
 
         <div class="item">
@@ -45,7 +45,7 @@
 
         <div class="item">
           <label for="room">Room No<span>*</span></label>
-          <input id="room" type="text" name="room"  pattern="[0-9]+" [(ngModel)]="complain.room" title="Only numbers are allowed"required/>
+          <input id="room" type="text" name="room"  [(ngModel)]="complain.room" required/>
         </div>
 
         <div class="item">
