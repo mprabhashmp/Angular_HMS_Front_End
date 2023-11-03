@@ -8,7 +8,7 @@ import { AdminServiceService } from './admin-service.service';
   styleUrls: ['./hms-admin.component.css']
 })
 export class HmsAdminComponent implements OnInit {
- 
+  p: number = 1;
  users: any[] = [];
  searchValue: string = '';
  filteredUsers: any[] = [];
