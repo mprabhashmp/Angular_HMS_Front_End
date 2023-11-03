@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:"hms-warden",component:HmsWardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN',] },resolve: { userRole: RouterresolverService }},
   {path:"hms-subwarden",component:HmsSubwardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN',] },resolve: { userRole: RouterresolverService }},
   {path:"hms-dean",component:HmsDeanComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN',] },resolve: { userRole: RouterresolverService }},
-  {path:"student-addcomplain",component:StudentAddcomplainComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
+  {path:"student-addcomplain",component:StudentAddcomplainComponent},
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HmsHomeService } from './hms-home.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hms-home',
@@ -64,7 +65,6 @@ export class HmsHomeComponent {
     this.HomeService.logout();
     this.router.navigate(['/hms-home']);
   }
-
 
 }
 
