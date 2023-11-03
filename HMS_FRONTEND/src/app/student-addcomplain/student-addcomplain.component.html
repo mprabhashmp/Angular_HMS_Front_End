@@ -28,19 +28,12 @@
 
             <label for="fname">First Name<span></span></label>
             <input id="fname" type="text" [value]="userData.fname" name="fname" [(ngModel)]="complain.fname" readonly >
-
-            <label for="fname">First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname"  [(ngModel)]="complain.fname"required />
-
           </div>
 
           <div class="item">
 
             <label for="lname">Last Name<span></span></label>
             <input id="lname" type="text" [value]="userData.lname"  name="lname" [(ngModel)]="complain.lname" readonly >
-
-            <label for="lname">Last Name<span>*</span></label>
-            <input id="lname" type="text" name="lname"   [(ngModel)]="complain.lname" required/>
 
           </div>
 
@@ -58,9 +51,6 @@
 
           <label for="room">Room No<span></span></label>
           <input id="room" type="text" name="room" [value]="userData.room" [(ngModel)]="complain.room"  readonly>
-
-          <label for="room">Room No<span>*</span></label>
-          <input id="room" type="text" name="room"  [(ngModel)]="complain.room" required/>
 
         </div>
 
