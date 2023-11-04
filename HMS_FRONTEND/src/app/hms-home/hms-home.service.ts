@@ -13,6 +13,7 @@ export class HmsHomeService {
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
   private apiUrl3 = 'http://localhost:8080/api/auth/userprofile';
   private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
+  private apiUrl5 = 'http://localhost:8080/api/user/complain/getComplainsByCurrentUser';
 
   constructor(private http: HttpClient) { }
 
@@ -62,6 +63,14 @@ export class HmsHomeService {
     const id = updatedUser.id; // Assuming your updatedUser object contains the 'id' field
     return this.http.put<any>(`${this.apiUrl4}`, updatedUser, { headers });
   }
+
+
+  getComplains(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl5}`, { headers });
+  }
+
+
 
 
 }

@@ -36,13 +36,11 @@ const routes: Routes = [
   {path:"hms-subwarden",component:HmsSubwardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN',] },resolve: { userRole: RouterresolverService }},
   {path:"hms-dean",component:HmsDeanComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN',] },resolve: { userRole: RouterresolverService }},
 
-  {path:"student-addcomplain",component:StudentAddcomplainComponent},
-
   {path:"student-addcomplain",component:StudentAddcomplainComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
 
   {path:"student-viewcomplain",component:StudentViewcomplainComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT',] },resolve: { userRole: RouterresolverService }},
 
-  {path:"admin-property",component:AdminPropertyComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
+  {path:"admin-property",component:AdminPropertyComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN','WARDEN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
 
 
   {path:"admin-users-students",component:AdminUsersStudentComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
