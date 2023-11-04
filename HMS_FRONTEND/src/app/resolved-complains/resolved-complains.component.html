@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+
+
+</head>
+<body>
+ 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+
+
+</head>
+<body>
+
+    <div class="container">
+
+                <div class="card-body">
+                    <h6>Complains: <span class="float-end"></span></h6>
+                </div>
+
+                <!-- complain tables -->
+            
+                    <br>
+
+                   
+                      <table id="tab" class="table table-striped table-bordered">
+                      <thead>
+                      <tr>
+                      <th scope="col">Complain Id</th>
+                      <th scope="col">User Index</th>
+                      <th scope="col">Item Code</th>
+                      <th scope="col">Complain Description</th>
+                      <!-- <th scope="col">Image</th> -->
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Hostal Type</th>
+                      <th scope="col">Room</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Date</th>
+                    
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr scope="row" *ngFor="let complains of (complains | paginate: { itemsPerPage: 5, currentPage: p })">
+                      <td>{{ complains.c_id }}</td>
+                      <td>{{ complains.user_index }}</td>
+                      <td>{{ complains.c_itemcode }}</td>
+                      <td>{{ complains.c_description }}</td>
+                      <!-- <td>{{ complains.c_image}}</td> -->
+                      <td>{{ complains.fname }}</td>
+                      <td>{{ complains.lname }}</td>
+                      <td>{{ complains.hostaltype }}</td>
+                      <td>{{ complains.room }}</td>
+                      <td style="color:green;">{{ complains.status }}</td>
+                      <td>{{ formatDate(complains.createdAt) }}</td>
+                    
+
+                      </tr>
+                      </tbody>
+                      </table>
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                      </div>
+               
+</body>
+</html>
+               
+</body>
+</html>
