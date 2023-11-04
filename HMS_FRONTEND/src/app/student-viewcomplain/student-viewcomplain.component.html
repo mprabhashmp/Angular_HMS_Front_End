@@ -38,7 +38,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let complaint of complaints">
+                        <tr *ngFor="let complaint of (complaints | paginate: { itemsPerPage: 5, currentPage: p })">
                             <td>{{ complaint.c_id }}</td>
                             <td>{{ complaint.user_index }}</td>
                             <td>{{ complaint.c_itemcode }}</td>
@@ -48,13 +48,13 @@
                             <td>{{ complaint.lname }}</td>
                             <td>{{ complaint.hostaltype }}</td>
                             <td>{{ complaint.room }}</td>
-                            <td>{{ complaint.status }}</td>
-                            <td>{{ complaint.created_at }}</td>
+                            <td style="color: green;">Pending...</td>
+                            <td>{{formatDate(complaint.createdAt) }}</td>
                           </tr>
                       
                       </tbody>
                       </table>
-                 
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
                       </div>
                
 </body>
