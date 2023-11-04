@@ -21,6 +21,10 @@ import { AdminUsersStudentComponent } from './admin-users-student/admin-users-st
 import { AdminUsersStaffComponent } from './admin-users-staff/admin-users-staff.component';
 
 import { AdminAddpropertyComponent } from './admin-addproperty/admin-addproperty.component';
+import { ResolvedComplainsComponent } from './resolved-complains/resolved-complains.component';
+import { StudentResolvedComplainsComponent } from './student-resolved-complains/student-resolved-complains.component';
+import { SubwardenResolvedComplainsComponent } from './subwarden-resolved-complains/subwarden-resolved-complains.component';
+import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/warden-resolve-complaints.component';
 
 
 
@@ -49,6 +53,11 @@ const routes: Routes = [
 
   {path:"admin-addproperty",component:AdminAddpropertyComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN',] },resolve: { userRole: RouterresolverService }},
 
+  {path:"resolved-complains",component:ResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT','WARDEN','SUBWARDEN','DEAN'] },resolve: { userRole: RouterresolverService }},
+
+  {path:"student-resolved-complains",component:StudentResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT'] },resolve: { userRole: RouterresolverService }},
+  {path:"subwarden-resolved-complains",component:SubwardenResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
+  {path:"warden-resolve-complaints",component:WardenResolveComplaintsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN'] },resolve: { userRole: RouterresolverService }},
 
 
 ];

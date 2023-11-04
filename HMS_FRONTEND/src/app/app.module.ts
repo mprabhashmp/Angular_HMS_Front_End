@@ -34,6 +34,10 @@ import { AdminUsersStudentComponent } from './admin-users-student/admin-users-st
 import { AdminUsersStaffComponent } from './admin-users-staff/admin-users-staff.component';
 
 import { AdminAddpropertyComponent } from './admin-addproperty/admin-addproperty.component';
+import { ResolvedComplainsComponent } from './resolved-complains/resolved-complains.component';
+import { StudentResolvedComplainsComponent } from './student-resolved-complains/student-resolved-complains.component';
+import { SubwardenResolvedComplainsComponent } from './subwarden-resolved-complains/subwarden-resolved-complains.component';
+import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/warden-resolve-complaints.component';
 
 
 
@@ -66,6 +70,10 @@ import { AdminAddpropertyComponent } from './admin-addproperty/admin-addproperty
       AdminUsersStaffComponent,
 
       AdminAddpropertyComponent,
+        ResolvedComplainsComponent,
+        StudentResolvedComplainsComponent,
+        SubwardenResolvedComplainsComponent,
+        WardenResolveComplaintsComponent,
 
 
   ],
