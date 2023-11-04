@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SubwardenServiceService } from './subwarden-service.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-hms-subwarden',
@@ -8,9 +9,8 @@ import { SubwardenServiceService } from './subwarden-service.service';
 })
 export class HmsSubwardenComponent {
 
-  
-complains: any[] = [];
-ComplainCount:any;
+  p: number = 1;
+complains:any[]=[];
  
 
 constructor(private subwardenservice: SubwardenServiceService) { }
@@ -18,41 +18,27 @@ constructor(private subwardenservice: SubwardenServiceService) { }
   ngOnInit() {
 
     this.getComplains();
-    this.getcomplainCount();
+
+
   }
-
-  // compdata: any = {
-  //   c_id: 0,
-  //   user_index: '',
-  //   c_itemcode: '',  
-  //   c_description: '',
-  //   //c_image:'',
-  //   fname:'',
-  //   lname: '',
-  //   hostaltype: '',
-  //   room: '',
-  //   status: '',
-  //   created_at: '',
-
-  // };
-
-  getcomplainCount() {
-    this.subwardenservice.getcomplainCount().subscribe(
-      (count: any) => {
-        this.getcomplainCount = count;
-      },
-      (error) => {
-        console.log('Error retrieving user count:', error);
-      }
-    );
+  
+  formatDate(timestamp: string): string {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) + '| ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
   }
- 
 
   getComplains(): void {
-    this.subwardenservice.getComplains().subscribe(complain=> {
-      this.complains = complain;
-
+    this.subwardenservice.getComplains().subscribe(complains => {
+      this.complains = complains;
     });
   }
 
+  
+  resolveComplain(c_id: number): void {
+    if (window.confirm('Are you sure you want to Accept this complaint?')) {
+      this.subwardenservice.resolveComplain(c_id).subscribe(() => {
+        this.getComplains();
+      });
+    }
+  }
 }

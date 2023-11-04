@@ -41,17 +41,18 @@
                       <th scope="col">User Index</th>
                       <th scope="col">Item Code</th>
                       <th scope="col">Complain Description</th>
-                      <th scope="col">Image</th>
+                      <!-- <th scope="col">Image</th> -->
                       <th scope="col">First Name</th>
                       <th scope="col">Last Name</th>
                       <th scope="col">Hostal Type</th>
                       <th scope="col">Room</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Date of Submission</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Action</th>
                       </tr>
                       </thead>
                       <tbody>
-                      <tr scope="row" *ngFor="let complains of complains">
+                      <tr scope="row" *ngFor="let complains of (complains | paginate: { itemsPerPage: 5, currentPage: p })">
                       <td>{{ complains.c_id }}</td>
                       <td>{{ complains.user_index }}</td>
                       <td>{{ complains.c_itemcode }}</td>
@@ -61,13 +62,14 @@
                       <td>{{ complains.lname }}</td>
                       <td>{{ complains.hostaltype }}</td>
                       <td>{{ complains.room }}</td>
-                      <td>{{ complains.status }}</td>
-                      <td>{{ complains.created_at }}</td>
-
+                      <td style="color:green;">{{ complains.status }}</td>
+                      <td>{{ formatDate(complains.createdAt) }}</td>
+                      <td><button class="btn btn-danger btn-sm" (click)="resolveComplain(complains.c_id)">Accept</button></td>
 
                       </tr>
                       </tbody>
                       </table>
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
                       </div>
                
 </body>
