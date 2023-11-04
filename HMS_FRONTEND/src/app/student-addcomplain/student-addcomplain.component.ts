@@ -62,6 +62,7 @@ export class StudentAddcomplainComponent implements OnInit{
       formData.append('room', this.userData.room);
       formData.append('c_image', this.complain.c_image);
       formData.append('hostaltype', this.userData.hostaltype);
+      formData.append('status', this.userData.status)+'pending..';
   
       this.complainService.createComplain(formData).subscribe(
         (response) => {
