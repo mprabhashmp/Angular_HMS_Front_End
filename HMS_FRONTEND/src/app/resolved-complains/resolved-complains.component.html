@@ -9,8 +9,7 @@
 
 </head>
 <body>
-
-  <app-subwarden-navbar></app-subwarden-navbar> 
+ 
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +47,7 @@
                       <th scope="col">Room</th>
                       <th scope="col">Status</th>
                       <th scope="col">Date</th>
-                      <th scope="col">Action</th>
+                    
                       </tr>
                       </thead>
                       <tbody>
@@ -64,7 +63,7 @@
                       <td>{{ complains.room }}</td>
                       <td style="color:green;">{{ complains.status }}</td>
                       <td>{{ formatDate(complains.createdAt) }}</td>
-                      <td><button class="btn btn-danger btn-sm" (click)="resolveComplain(complains.c_id)">Accept</button></td>
+                    
 
                       </tr>
                       </tbody>

@@ -19,7 +19,7 @@ export class StudentViewcomplainComponent implements OnInit{
     this.loadComplaintsByCurrentUser();
 
   }
-
+  p: number = 1;
   complaints: any[] = [];
 
  
@@ -33,5 +33,11 @@ export class StudentViewcomplainComponent implements OnInit{
       }
     );
   }
+
+  formatDate(timestamp: string): string {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) + '| ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+
 }
 

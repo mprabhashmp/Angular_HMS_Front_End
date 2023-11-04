@@ -35,7 +35,7 @@ export class RegistrationComponent {
           error => {
             // Handle the error response from the server
             console.log(error);
-            alert('Already Registered! Please Check Your Email!');
+            alert('Already Registered! Please Check Your Index');
             
           }
   
