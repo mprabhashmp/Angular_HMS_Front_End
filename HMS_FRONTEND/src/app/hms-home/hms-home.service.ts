@@ -12,8 +12,9 @@ export class HmsHomeService {
   private apiUrl1 = 'http://localhost:8080/api/auth/authenticate';
   private apiUrl2 = 'http://localhost:8080/api/auth/CurrentUser';
   private apiUrl3 = 'http://localhost:8080/api/auth/userprofile';
-  private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
+  // private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
   private apiUrl5 = 'http://localhost:8080/api/user/complain/getComplainsByCurrentUser';
+  private apiUrl6 = 'http://localhost:8080/api/user/complain/getResolvedComplainsByUser';
 
   constructor(private http: HttpClient) { }
 
@@ -58,18 +59,23 @@ export class HmsHomeService {
     return of(role);
   }
   
-  updateUserProfile(updatedUser: any): Observable<any> {
-    const headers = this.getHeaders();
-    const id = updatedUser.id; // Assuming your updatedUser object contains the 'id' field
-    return this.http.put<any>(`${this.apiUrl4}`, updatedUser, { headers });
-  }
+  // updateUserProfile(updatedUser: any): Observable<any> {
+  //   const headers = this.getHeaders();
+  //   const id = updatedUser.id; // Assuming your updatedUser object contains the 'id' field
+  //   return this.http.put<any>(`${this.apiUrl4}`, updatedUser, { headers });
+  // }
 
-
+//GET ALL Complains By UserIndex
   getComplains(): Observable<any> {
     const headers = this.getHeaders();
     return this.http.get<any>(`${this.apiUrl5}`, { headers });
   }
 
+  //Get All Resolved Complains By User Index
+  getResolveComplains(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl6}`, { headers });
+  }
 
 
 
