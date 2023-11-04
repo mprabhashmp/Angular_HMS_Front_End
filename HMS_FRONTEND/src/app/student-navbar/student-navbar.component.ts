@@ -9,19 +9,27 @@ import { Router } from '@angular/router';
 })
 export class StudentNavbarComponent {
 
-  username: string | undefined;
+  
+  userData: any;
 
 
   constructor(private HmsHomeService : HmsHomeService, private router: Router) { }
 
   
     ngOnInit(): void {
-      this.HmsHomeService.getUsername().subscribe(
+        this.loadUserProfile();
+    }
+
+    loadUserProfile(): void {
+      this.HmsHomeService.getUserProfile().subscribe(
         (response: any) => {
-          this.username = response.firstname.toString(); //Converting the Object that returning through the Endpoint as the response
+          this.userData = { ...response };
         },
         (error: any) => {
-          // Handle error
+          console.log('Error retrieving user profile:', error);
+          console.log('Error status:', error.status);
+          console.log('Error message:', error.message);
+          // Handle the error appropriately
         }
       );
     }
@@ -33,3 +41,5 @@ export class StudentNavbarComponent {
     this.router.navigate(['/']);
   }
 }
+
+
