@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ViewcomplainServiceService } from './viewcomplain.service.service';
+import { HmsHomeService } from '../hms-home/hms-home.service';
 
 @Component({
   selector: 'app-student-viewcomplain',
@@ -10,51 +11,27 @@ import { ViewcomplainServiceService } from './viewcomplain.service.service';
 export class StudentViewcomplainComponent implements OnInit{
  
 
-  constructor(private viewcomplainservice: ViewcomplainServiceService) { }
-
-complains: any[] = [];
-ComplainCount:any;
- 
+  constructor(private viewcomplainservice: ViewcomplainServiceService,private hmsservice:HmsHomeService) { }
 
 
-  ngOnInit() {
+  ngOnInit():void {
 
-    this.getComplains();
-    this.getcomplainCount();
+    this.loadComplaintsByCurrentUser();
+
   }
 
-  compdata: any = {
-    c_id: 0,
-    user_index: '',
-    c_itemcode: '',  
-    c_description: '',
-    //c_image:'',
-    fname:'',
-    lname: '',
-    hostaltype: '',
-    room: '',
-    status: '',
-    created_at: '',
+  complaints: any[] = [];
 
-  };
-
-  getcomplainCount() {
-    this.viewcomplainservice.getcomplainCount().subscribe(
-      (count: any) => {
-        this.getcomplainCount = count;
+ 
+  loadComplaintsByCurrentUser() {
+    this.hmsservice.getComplains().subscribe(
+      (response: any) => {
+        this.complaints = response;
       },
-      (error) => {
-        console.log('Error retrieving user count:', error);
+      (error: any) => {
+        console.error('Error loading complaints:', error);
       }
     );
   }
- 
-
-  getComplains(): void {
-    this.viewcomplainservice.getComplains().subscribe(complain=> {
-      this.complains = complain;
-
-    });
-  }
-
 }
+

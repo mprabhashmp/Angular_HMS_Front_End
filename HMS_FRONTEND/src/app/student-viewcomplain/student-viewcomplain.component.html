@@ -38,23 +38,23 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr scope="row" *ngFor="let complains of complains">
-                      <td>{{ complains.c_id }}</td>
-                      <td>{{ complains.user_index }}</td>
-                      <td>{{ complains.c_itemcode }}</td>
-                      <td>{{ complains.c_description }}</td>
-                      <!-- <td>{{ complains.c_image}}</td> -->
-                      <td>{{ complains.fname }}</td>
-                      <td>{{ complains.lname }}</td>
-                      <td>{{ complains.hostaltype }}</td>
-                      <td>{{ complains.room }}</td>
-                      <td>{{ complains.status }}</td>
-                      <td>{{ complains.created_at }}</td>
-
-
-                      </tr>
+                        <tr *ngFor="let complaint of complaints">
+                            <td>{{ complaint.c_id }}</td>
+                            <td>{{ complaint.user_index }}</td>
+                            <td>{{ complaint.c_itemcode }}</td>
+                            <td>{{ complaint.c_description }}</td>
+                            <td>{{ complaint.c_image }}</td>
+                            <td>{{ complaint.fname }}</td>
+                            <td>{{ complaint.lname }}</td>
+                            <td>{{ complaint.hostaltype }}</td>
+                            <td>{{ complaint.room }}</td>
+                            <td>{{ complaint.status }}</td>
+                            <td>{{ complaint.created_at }}</td>
+                          </tr>
+                      
                       </tbody>
                       </table>
+                 
                       </div>
                
 </body>
