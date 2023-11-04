@@ -25,6 +25,7 @@ import { ResolvedComplainsComponent } from './resolved-complains/resolved-compla
 import { StudentResolvedComplainsComponent } from './student-resolved-complains/student-resolved-complains.component';
 import { SubwardenResolvedComplainsComponent } from './subwarden-resolved-complains/subwarden-resolved-complains.component';
 import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/warden-resolve-complaints.component';
+import { DeanResolvedComplainsComponent } from './dean-resolved-complains/dean-resolved-complains.component';
 
 
 
@@ -58,6 +59,7 @@ const routes: Routes = [
   {path:"student-resolved-complains",component:StudentResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT'] },resolve: { userRole: RouterresolverService }},
   {path:"subwarden-resolved-complains",component:SubwardenResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
   {path:"warden-resolve-complaints",component:WardenResolveComplaintsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN'] },resolve: { userRole: RouterresolverService }},
+  {path:"dean-resolved-complains",component:DeanResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN'] },resolve: { userRole: RouterresolverService }},
 
 
 ];
