@@ -29,43 +29,41 @@
                 </div>
 
                 <!-- complain tables -->
-            
-                    <br>
+       
 
                    
                       <table id="tab" class="table table-striped table-bordered">
                       <thead>
                       <tr>
                       <th scope="col">Complain Id</th>
-                      <th scope="col">User Index</th>
+                      <th scope="col">Index</th>
                       <th scope="col">Item Code</th>
-                      <th scope="col">Complain Description</th>
+                      <th scope="col">Description</th>
                       <!-- <th scope="col">Image</th> -->
                       <th scope="col">First Name</th>
                       <th scope="col">Last Name</th>
-                      <th scope="col">Hostal Type</th>
+                      <th scope="col">Hostal</th>
                       <th scope="col">Room</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Date</th>
+                      <th scope="col">Created Date</th>
+                      <th scope="col">Accepted Date</th>
                     
                       </tr>
                       </thead>
                       <tbody>
-                      <tr scope="row" *ngFor="let complains of (complains | paginate: { itemsPerPage: 5, currentPage: p })">
-                      <td>{{ complains.c_id }}</td>
-                      <td>{{ complains.user_index }}</td>
-                      <td>{{ complains.c_itemcode }}</td>
-                      <td>{{ complains.c_description }}</td>
-                      <!-- <td>{{ complains.c_image}}</td> -->
-                      <td>{{ complains.fname }}</td>
-                      <td>{{ complains.lname }}</td>
-                      <td>{{ complains.hostaltype }}</td>
-                      <td>{{ complains.room }}</td>
-                      <td style="color:green;">{{ complains.status }}</td>
-                      <td>{{ formatDate(complains.createdAt) }}</td>
-                    
-
-                      </tr>
+                        <tr scope="row" *ngFor="let combined of combinedData | paginate: { itemsPerPage: 5, currentPage: p }">
+                            <td>{{ combined.c_id }}</td>
+                            <td>{{ combined.user_index }}</td>
+                            <td>{{ combined.c_itemcode }}</td>
+                            <td>{{ combined.c_description }}</td>
+                            <td>{{ combined.fname }}</td>
+                            <td>{{ combined.lname }}</td>
+                            <td>{{ combined.hostaltype }}</td>
+                            <td>{{ combined.room }}</td>
+                            <td style="color:green;">{{ combined.status }}</td>
+                            <td>{{ formatDate(combined.createdAt) }}</td>
+                            <td>{{ formatDate(combined.createdAtCopy) }}</td>
+                          </tr>
                       </tbody>
                       </table>
                       <pagination-controls (pageChange)="p = $event"></pagination-controls>
