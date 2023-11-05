@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="refresh" content="20">
   
 
 
@@ -11,7 +12,33 @@
 <body>
 
   <app-student-navbar></app-student-navbar> 
-  <app-student-viewcomplain></app-student-viewcomplain>
-               
+
+  <div class="container">
+  <div style="width: 100%; display: table;">
+    <div style="display: table-row;">
+        <div style="display: table-cell;">
+           <app-student-viewcomplain></app-student-viewcomplain>
+        </div>
+    </div>
+</div>
+
+<!-- Second Row -->
+<div style="width: 100%; display: table;">
+    <div style="display: table-row;">
+        <div style="display: table-cell;">
+            <app-student-view-warden></app-student-view-warden>
+        </div>
+    </div>
+</div>
+
+<!-- Third Row -->
+<div style="width: 100%; display: table;">
+    <div style="display: table-row;">
+        <div style="display: table-cell;">
+           <app-student-view-dean></app-student-view-dean>
+        </div>
+    </div>
+</div>
+</div>            
 </body>
 </html>
