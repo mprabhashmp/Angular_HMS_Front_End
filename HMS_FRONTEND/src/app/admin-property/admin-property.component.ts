@@ -9,7 +9,7 @@ import { count } from 'rxjs';
 })
 export class AdminPropertyComponent implements OnInit {
 
-  properties: any[] = [];
+  property: any[] = [];
   searchValue: string = '';
   filterdProperties: any[] = [];
   propertyCount:any;
@@ -25,7 +25,7 @@ export class AdminPropertyComponent implements OnInit {
   propertyUpdate: any = {
     proid: 0,
     name: '',
-    c_item_code: '',
+    c_itemcode: '',
     status: ''
   };
 
@@ -41,20 +41,20 @@ export class AdminPropertyComponent implements OnInit {
   }
 
   getProperties() {
-    this.PropertyService.getProperties().subscribe(properties => {
-      this.properties = properties;
-      this.filterdProperties = properties;
+    this.PropertyService.getProperties().subscribe(property => {
+      this.property = property;
+      this.filterdProperties = property;
     });
   }
 
   searchProperty(): void {
     console.log(this.searchValue);
     if (this.searchValue.trim() === '') {
-      this.filterdProperties = this.properties;
+      this.filterdProperties = this.property;
     } else {
-      this.filterdProperties = this.properties.filter(property =>
+      this.filterdProperties = this.property.filter(property =>
         property.proid.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-        property.c_item_code.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+        property.c_itemcode.toLowerCase().includes(this.searchValue.toLowerCase()) ||
         property.name.toLowerCase().includes(this.searchValue.toLowerCase()) ||
         property.status.toLowerCase().includes(this.searchValue.toLowerCase())
       );
@@ -63,7 +63,7 @@ export class AdminPropertyComponent implements OnInit {
 
   clearSearch(): void {
     this.searchValue = '';
-    this.filterdProperties = this.properties;
+    this.filterdProperties = this.property;
   }
   
 }

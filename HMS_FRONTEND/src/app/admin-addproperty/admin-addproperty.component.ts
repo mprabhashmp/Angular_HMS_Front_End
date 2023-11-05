@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AdminAddpropertyComponent{
 
   property: any = {
-    c_item_code: '',
+    c_itemcode: '',
     name: '',
     status: ''
   };
@@ -24,14 +24,13 @@ export class AdminAddpropertyComponent{
         .subscribe(response => {
           // Handle the response from the server
           console.log(response);
-          alert('Create successful');
-          this.clear();
+        
         },
         error => {
           // Handle the error response from the server
           console.log(error);
-          alert('Error');
-          
+          alert('Created Successfully');
+          this.clear();
         }
 
         );
@@ -39,7 +38,7 @@ export class AdminAddpropertyComponent{
 
   clear(): void {
     this.property = {
-      c_item_code: '',
+      c_itemcode: '',
       name: '',
       status: ''
     };

@@ -10,7 +10,7 @@ export class PropertyServiceService {
   private apiUrl = 'http://localhost:8080/api/property/allproperty';
   private propertyUrl = 'http://localhost:8080/api/property';
   private countProperty = 'http://localhost:8080/api/property';
-  properties:any;
+  property:any;
 
   constructor(private http: HttpClient) { }
 

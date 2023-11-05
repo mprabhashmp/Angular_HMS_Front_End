@@ -31,3 +31,7 @@
   .custom-table .datatable-footer-cell:last-child {
     border-right: none;
   }
+
+  th,td{
+    font-size:small;
+  }
