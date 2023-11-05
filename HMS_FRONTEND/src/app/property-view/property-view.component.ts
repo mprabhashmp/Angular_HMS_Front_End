@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { PropertyServiceService } from './property-service.service';
-import { count } from 'rxjs';
+import { Component } from '@angular/core';
+import { PropertyViewService } from './property-view.service';
 
 @Component({
-  selector: 'app-admin-property',
-  templateUrl: './admin-property.component.html',
-  styleUrls: ['./admin-property.component.css']
+  selector: 'app-property-view',
+  templateUrl: './property-view.component.html',
+  styleUrls: ['./property-view.component.css']
 })
-export class AdminPropertyComponent implements OnInit {
+export class PropertyViewComponent {
 
   property: any[] = [];
   searchValue: string = '';
@@ -15,7 +14,7 @@ export class AdminPropertyComponent implements OnInit {
   propertyCount:any;
   p: number = 1;
 
-  constructor(private PropertyService: PropertyServiceService) { }
+  constructor(private PropertyViewService: PropertyViewService) { }
 
   ngOnInit() {
       this.getProperties();
@@ -30,7 +29,7 @@ export class AdminPropertyComponent implements OnInit {
   };
 
   getPropertyCount() {
-    this.PropertyService.getPropertyCount().subscribe(
+    this.PropertyViewService.getPropertyCount().subscribe(
       (count: any) => {
         this.propertyCount = count;
       },
@@ -41,7 +40,7 @@ export class AdminPropertyComponent implements OnInit {
   }
 
   getProperties() {
-    this.PropertyService.getProperties().subscribe(property => {
+    this.PropertyViewService.getProperties().subscribe(property => {
       this.property = property;
       this.filterdProperties = property;
     });
@@ -65,5 +64,4 @@ export class AdminPropertyComponent implements OnInit {
     this.searchValue = '';
     this.filterdProperties = this.property;
   }
-  
 }

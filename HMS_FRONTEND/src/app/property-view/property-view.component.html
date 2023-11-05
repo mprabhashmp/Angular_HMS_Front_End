@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  
-</head>
-<body>
-    <app-admin-navbar></app-admin-navbar>
+
     <div class="container">
-        <button style="margin-top: 10px;" type="button" class="btn btn-primary"> <a href="../admin-addproperty">Add New Property</a></button>
+        
         <div class="card-body">
             <h6 style="font-size: medium;">Available Properties: <span class="float-end"><b>{{ propertyCount?.toString() }}</b></span></h6>
           </div>
@@ -30,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <ng-container *ngFor="let property of (filterdProperties | paginate: { itemsPerPage: 10, currentPage: p })">
+                    <ng-container *ngFor="let property of (filterdProperties | paginate: { itemsPerPage: 8, currentPage: p })">
                         <tr scope="row">
                             <td>{{ property.proid }}</td>
                             <td>{{ property.c_itemcode }}</td>
@@ -44,5 +35,3 @@
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
-    </body>
-</html>

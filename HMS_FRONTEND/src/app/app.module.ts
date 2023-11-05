@@ -41,6 +41,10 @@ import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/wa
 import { DeanResolvedComplainsComponent } from './dean-resolved-complains/dean-resolved-complains.component';
 import { StudentViewWardenComponent } from './student-view-warden/student-view-warden.component';
 import { StudentViewDeanComponent } from './student-view-dean/student-view-dean.component';
+import { AdminViewComplainsComponent } from './admin-view-complains/admin-view-complains.component';
+import { PropertyViewComponent } from './property-view/property-view.component';
+import { WardenPropertyViewComponent } from './warden-property-view/warden-property-view.component';
+import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwarden-property-view.component';
 
 
 
@@ -80,6 +84,10 @@ import { StudentViewDeanComponent } from './student-view-dean/student-view-dean.
         DeanResolvedComplainsComponent,
         StudentViewWardenComponent,
         StudentViewDeanComponent,
+        AdminViewComplainsComponent,
+        PropertyViewComponent,
+        WardenPropertyViewComponent,
+        SubwardenPropertyViewComponent,
 
 
   ],

@@ -28,6 +28,10 @@ import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/wa
 import { DeanResolvedComplainsComponent } from './dean-resolved-complains/dean-resolved-complains.component';
 import { StudentViewWardenComponent } from './student-view-warden/student-view-warden.component';
 import { StudentViewDeanComponent } from './student-view-dean/student-view-dean.component';
+import { AdminViewComplainsComponent } from './admin-view-complains/admin-view-complains.component';
+import { PropertyViewComponent } from './property-view/property-view.component';
+import { WardenPropertyViewComponent } from './warden-property-view/warden-property-view.component';
+import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwarden-property-view.component';
 
 
 
@@ -64,6 +68,10 @@ const routes: Routes = [
   {path:"dean-resolved-complains",component:DeanResolvedComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','DEAN'] },resolve: { userRole: RouterresolverService }},
   {path:"student-view-warden",component:StudentViewWardenComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT'] },resolve: { userRole: RouterresolverService }},
   {path:"student-view-dean",component:StudentViewDeanComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','STUDENT'] },resolve: { userRole: RouterresolverService }},
+  {path:"admin-view-complains",component:AdminViewComplainsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN'] },resolve: { userRole: RouterresolverService }},
+  {path:"property-view",component:PropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
+  {path:"warden-property-view",component:WardenPropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN'] },resolve: { userRole: RouterresolverService }},
+  {path:"subwarden-property-view",component:SubwardenPropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
 
 
 ];
