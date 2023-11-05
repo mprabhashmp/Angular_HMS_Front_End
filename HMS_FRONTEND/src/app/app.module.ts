@@ -39,6 +39,8 @@ import { StudentResolvedComplainsComponent } from './student-resolved-complains/
 import { SubwardenResolvedComplainsComponent } from './subwarden-resolved-complains/subwarden-resolved-complains.component';
 import { WardenResolveComplaintsComponent } from './warden-resolve-complaints/warden-resolve-complaints.component';
 import { DeanResolvedComplainsComponent } from './dean-resolved-complains/dean-resolved-complains.component';
+import { StudentViewWardenComponent } from './student-view-warden/student-view-warden.component';
+import { StudentViewDeanComponent } from './student-view-dean/student-view-dean.component';
 
 
 
@@ -76,6 +78,8 @@ import { DeanResolvedComplainsComponent } from './dean-resolved-complains/dean-r
         SubwardenResolvedComplainsComponent,
         WardenResolveComplaintsComponent,
         DeanResolvedComplainsComponent,
+        StudentViewWardenComponent,
+        StudentViewDeanComponent,
 
 
   ],

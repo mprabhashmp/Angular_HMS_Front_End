@@ -15,6 +15,8 @@ export class HmsHomeService {
   // private apiUrl4 = 'http://localhost:8080/api/auth/UpdateProfile';
   private apiUrl5 = 'http://localhost:8080/api/user/complain/getComplainsByCurrentUser';
   private apiUrl6 = 'http://localhost:8080/api/user/complain/getResolvedComplainsByUser';
+  private apiUrl7 = 'http://localhost:8080/api/user/complain/getWardenComplainsByCurrentUser';
+  private apiUrl8 = 'http://localhost:8080/api/user/complain/getDeanComplainsByCurrentUser';
 
   constructor(private http: HttpClient) { }
 
@@ -77,6 +79,17 @@ export class HmsHomeService {
     return this.http.get<any>(`${this.apiUrl6}`, { headers });
   }
 
+  //Get complins from warden
+  getWardenComplains(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl7}`, { headers });
+  }
 
+    //Get complins from warden
+    getDeanComplains(): Observable<any> {
+      const headers = this.getHeaders();
+      return this.http.get<any>(`${this.apiUrl8}`, { headers });
+    }
+  
 
 }

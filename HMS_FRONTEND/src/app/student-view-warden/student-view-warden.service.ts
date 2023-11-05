@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ViewcomplainServiceService {
+export class StudentViewWardenService {
 
-//PASSED FROM HMS-HOME SERVICE
+  
+//PASSED FROM HMS HOME SERVICE
 }
