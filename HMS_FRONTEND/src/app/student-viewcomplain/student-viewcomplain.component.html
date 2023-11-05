@@ -35,7 +35,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let complaint of (complaints | paginate: { itemsPerPage: 5, currentPage: p })">
+                        <tr *ngFor="let complaint of (complaints | paginate: { itemsPerPage: 4, currentPage: p })">
                             <td>{{ complaint.c_id }}</td>
                             <td>{{ complaint.user_index }}</td>
                             <td>{{ complaint.c_itemcode }}</td>
