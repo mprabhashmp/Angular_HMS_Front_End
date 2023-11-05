@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+
+
+</head>
+<body>
+
+    <div class="container">
+
+                <div class="card-body">
+                    <h6>Complaints Sent To Warden <span class="float-end"></span></h6>
+                </div>
+
+                <!-- complain tables -->
+                   
+                      <table id="tab" class="table table-striped table-bordered">
+                      <thead>
+                      <tr>
+                      <th scope="col">Complain Id</th>
+                      <th scope="col">User Index</th>
+                      <th scope="col">Item Code</th>
+                      <th scope="col">Complain Description</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Hostal Type</th>
+                      <th scope="col">Room</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Date of Submission</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let complaint of (complaints | paginate: { itemsPerPage: 5, currentPage: p })">
+                            <td>{{ complaint.c_id }}</td>
+                            <td>{{ complaint.user_index }}</td>
+                            <td>{{ complaint.c_itemcode }}</td>
+                            <td>{{ complaint.c_description }}</td>
+                            <td>{{ complaint.c_image }}</td>
+                            <td>{{ complaint.fname }}</td>
+                            <td>{{ complaint.lname }}</td>
+                            <td>{{ complaint.hostaltype }}</td>
+                            <td>{{ complaint.room }}</td>
+                            <td style="color: green;">Pending...</td>
+                            <td>{{formatDate(complaint.createdAt) }}</td>
+                          </tr>
+                      
+                      </tbody>
+                      </table>
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                      <hr>
+                      </div>
+               
+</body>
+</html>
