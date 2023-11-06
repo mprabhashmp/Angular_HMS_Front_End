@@ -32,6 +32,7 @@ import { AdminViewComplainsComponent } from './admin-view-complains/admin-view-c
 import { PropertyViewComponent } from './property-view/property-view.component';
 import { WardenPropertyViewComponent } from './warden-property-view/warden-property-view.component';
 import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwarden-property-view.component';
+import { AdminAssignRoomsComponent } from './admin-assign-rooms/admin-assign-rooms.component';
 
 
 
@@ -72,6 +73,7 @@ const routes: Routes = [
   {path:"property-view",component:PropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
   {path:"warden-property-view",component:WardenPropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','WARDEN'] },resolve: { userRole: RouterresolverService }},
   {path:"subwarden-property-view",component:SubwardenPropertyViewComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
+  {path:"admin-assign-rooms",component:AdminAssignRoomsComponent,canActivate: [AuthGurdService], data: { allowedRoles: ['ADMIN','SUBWARDEN'] },resolve: { userRole: RouterresolverService }},
 
 
 ];

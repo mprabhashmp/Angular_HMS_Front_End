@@ -45,7 +45,8 @@ import { AdminViewComplainsComponent } from './admin-view-complains/admin-view-c
 import { PropertyViewComponent } from './property-view/property-view.component';
 import { WardenPropertyViewComponent } from './warden-property-view/warden-property-view.component';
 import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwarden-property-view.component';
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { AdminAssignRoomsComponent } from './admin-assign-rooms/admin-assign-rooms.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwar
         PropertyViewComponent,
         WardenPropertyViewComponent,
         SubwardenPropertyViewComponent,
+        AdminAssignRoomsComponent,
 
 
   ],
@@ -98,7 +100,8 @@ import { SubwardenPropertyViewComponent } from './subwarden-property-view/subwar
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    ZXingScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

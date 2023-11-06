@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+</head>
+<body>
+
+  <app-admin-navbar></app-admin-navbar> 
+   
+
+  <div class="testbox" style="margin-bottom: 40px;">
+    <form>
+      <div class="banner">
+        <h3>ASSIGN ROOMS</h3>
+      </div>
+
+        <div class="item">
+          <label for="user_index">Index_No<span>*</span></label>
+          <input id="user_index" type="text" name="user_index"  [(ngModel)]="input_user_index" required/>
+        </div>
+        <div class="item">
+          <label for="room">Room No.<span>*</span></label>
+          <input id="room" type="text" name="room" [(ngModel)]="input_room_no" title="Only English letters are allowed"required />
+        </div>
+        <div class="btn-block">
+            <button type="submit"  (click)="assignStudent()" >SUBMIT</button>
+           </div>
+           <div *ngIf="errorMessage" >
+            <p style="color:orangered; align-items: center;">{{ errorMessage }}</p>
+          </div>
+        </form>
+        </div>
+   
+
+  </body>
+  </html>
