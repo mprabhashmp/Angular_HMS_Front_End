@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -21,6 +21,15 @@ getWardenComplains(): Observable<any[]> {
 
 resolveComplain(c_id: number): Observable<any> {
   return this.http.put<any>(`${this.apiUrl1}/getresolvebywarden/${c_id}`, {});
+}
+
+downloadPDF(): Observable<HttpResponse<Blob>> {
+  const headers = new HttpHeaders({ 'Content-Type': 'application/pdf' });
+  return this.http.get('http://your-server-url/dailyReport', {
+    headers,
+    observe: 'response',
+    responseType: 'blob'
+  });
 }
 
 }

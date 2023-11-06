@@ -16,6 +16,23 @@
         <h3>Create Complain</h3>
       </div>
 
+      <div class="camera-container">
+        <video #videoElement
+               [style.width.px]="videoWidth"
+               [style.height.px]="videoHeight"
+               *ngIf="isCameraAvailable"
+               autoplay
+               playsinline>
+        </video>
+        <div *ngIf="!isCameraAvailable" class="camera-error">Camera not available</div>
+      </div>
+      
+      
+      <div class="scan-result" *ngIf="scanResult">
+        Scanned Result: {{ scanResult }}
+      </div>
+      
+
       <label for="c_itemcode">QR Code:<span>*</span></label>
       <input type="file" id="c_itemcode" name="c_itemcode" (change)="onFileSelected($event)" accept="image/*">
 

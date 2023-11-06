@@ -43,11 +43,16 @@ constructor(private wardenservice: WardenServiceService,private http: HttpClient
       });
     }
   }
+
+
+  
+
   calldailyreport() {
     const springBootEndpointUrl = 'http://localhost:8080/api/reports/monthlyReport'; // Replace with your Spring Boot endpoint URL
 
     // Open the PDF in a new browser window or tab
     window.open(springBootEndpointUrl, '_blank');
   }
+
   
 }
