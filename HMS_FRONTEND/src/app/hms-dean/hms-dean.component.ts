@@ -10,6 +10,7 @@ export class HmsDeanComponent {
 
   p: number = 1;
   complains:any[]=[];
+  reportData: any;
    
   
   constructor(private deanservice: DeanServiceService) { }
@@ -38,5 +39,11 @@ export class HmsDeanComponent {
           this.getWardenComplains();
         });
       }
+    }
+
+    callmonthlyreport() {
+      const springBootEndpointUrl = 'http://localhost:8080/api/reports/monthlyReport'; 
+  
+      window.open(springBootEndpointUrl, '_blank');
     }
 }
