@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { WardenServiceService } from './warden-service.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-hms-warden',
@@ -11,9 +13,10 @@ export class HmsWardenComponent{
 
 p: number = 1;
 complains:any[]=[];
+reportData: any;
  
 
-constructor(private wardenservice: WardenServiceService) { }
+constructor(private wardenservice: WardenServiceService,private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -41,6 +44,15 @@ constructor(private wardenservice: WardenServiceService) { }
     }
   }
 
+
   
+
+  calldailyreport() {
+    const springBootEndpointUrl = 'http://localhost:8080/api/reports/monthlyReport'; // Replace with your Spring Boot endpoint URL
+
+    // Open the PDF in a new browser window or tab
+    window.open(springBootEndpointUrl, '_blank');
+  }
+
   
 }
