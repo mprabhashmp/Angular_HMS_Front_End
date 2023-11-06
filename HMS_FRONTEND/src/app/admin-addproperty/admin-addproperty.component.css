@@ -24,7 +24,7 @@ body, div, form, input, select, textarea, label {
     padding: 20px;
     }
     form {
-    margin-top: auto;
+    margin-top: 0;
     margin-bottom: auto;
     width: 60%;
     padding: 20px;
